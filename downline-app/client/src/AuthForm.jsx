@@ -25,8 +25,16 @@ export default function AuthForm({ onAuthed }) {
   };
 
   return (
-    <form onSubmit={submit} style={{ maxWidth: 340, margin: "60px auto", fontFamily: "system-ui" }}>
-      <h2 style={{ marginBottom: 16 }}>{mode === "signup" ? "Create account" : "Log in"}</h2>
+    <form onSubmit={submit} style={{ maxWidth: 340, margin: "60px auto", padding: "0 20px", fontFamily: "system-ui", color: "#f2f2f2" }}>
+      <div style={{ textAlign: "center", marginBottom: 28 }}>
+        <div style={{ fontSize: 24, fontWeight: 800, letterSpacing: 0.5, color: "#eafff2" }}>
+          Area Code Pub & Bar
+        </div>
+        <div style={{ fontSize: 13, color: "#8fae9d", marginTop: 4 }}>
+          Welcome — glad to have you here
+        </div>
+      </div>
+      <h2 style={{ marginBottom: 16, color: "#f2f2f2" }}>{mode === "signup" ? "Create account" : "Log in"}</h2>
 
       {mode === "signup" && (
         <input placeholder="Full name" value={form.name} onChange={update("name")} required style={inputStyle} />
@@ -51,7 +59,7 @@ export default function AuthForm({ onAuthed }) {
         {loading ? "Please wait…" : mode === "signup" ? "Sign up" : "Log in"}
       </button>
 
-      <div style={{ marginTop: 14, fontSize: 13, textAlign: "center" }}>
+      <div style={{ marginTop: 14, fontSize: 13, textAlign: "center", color: "#aaa" }}>
         {mode === "signup" ? "Already have an account?" : "New here?"}{" "}
         <button
           type="button"
